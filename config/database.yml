@@ -20,10 +20,14 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
+  username: <%= ENV['USERNAME'] %>
+  password: <%= ENV['PASSWORD'] %>
+  host: <%= ENV['IP'] %>
+  
 
 development:
   <<: *default
-  database: workspace_development
+  database: reading-be_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +61,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: workspace_test
+  database: reading-be_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +84,5 @@ test:
 #
 production:
   <<: *default
-  database: workspace_production
-  username: workspace
-  password: <%= ENV['WORKSPACE_DATABASE_PASSWORD'] %>
+  database: reading-be_production
+
