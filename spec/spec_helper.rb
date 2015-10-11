@@ -33,10 +33,7 @@ RSpec.configure do |config|
     #     # => "be bigger than 2"
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
     
-    config.include RSpec::Rails::RequestExampleGroup, type: :request, example_group: {
-    file_path: /spec\/api/ 
-      
-    }
+    
   end
 
   # rspec-mocks config goes here. You can use an alternate test double
