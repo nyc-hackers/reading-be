@@ -7,13 +7,16 @@ gem 'rails', '4.2.1'
 gem 'pg'
 gem 'bcrypt', '~> 3.1.7'
 gem 'grape'
+gem 'hashie-forbidden_attributes' # helpful for using grape
 gem 'puma'
 
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+
   gem 'rspec-rails'
   gem 'rack-test'
+  gem "factory_girl_rails", "~> 4.0"
 end
 

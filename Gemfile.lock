@@ -58,6 +58,11 @@ GEM
       railties (~> 4.0)
     equalizer (0.0.11)
     erubis (2.7.0)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     grape (0.13.0)
@@ -71,6 +76,8 @@ GEM
       rack-mount
       virtus (>= 1.0.0)
     hashie (3.4.2)
+    hashie-forbidden_attributes (0.1.1)
+      hashie (>= 3.0)
     i18n (0.7.0)
     ice_nine (0.11.1)
     json (1.8.3)
@@ -166,7 +173,9 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
   dotenv-rails
+  factory_girl_rails (~> 4.0)
   grape
+  hashie-forbidden_attributes
   pg
   puma
   rack-test
