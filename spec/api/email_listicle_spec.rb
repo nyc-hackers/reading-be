@@ -1,21 +1,20 @@
-# require 'spec_helper'
+require 'rails_helper'
 
-# describe "email_listicle_api" do
-#   describe "GET /all" do
-#       it "returns all undecided links" do
-#           #setup
-#             undecided_email = double("email")
-#             allow(EmailLink).to receive(:undecided).and_return(undecided_email)
-#           #exercise
-#           get "/all", {}, { "Accept" => "application/json" }
+describe "email_listicle_api", type: :api do
+  describe "GET /all" do
+      it "returns and empty array for no links " do
+          #setup
+            
+          #exercise
+          get "/api/v1/email_links/all.json"
            
-#           #verifies
-#           expect(response).to be(undecided_email)
-#       end
+          #verifies
+          expect(last_response.body).to eq("[]")
+      end
        
        
        
-#   end
+  end
     
     
     
