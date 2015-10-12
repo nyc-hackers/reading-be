@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151012184419) do
+ActiveRecord::Schema.define(version: 20151012192529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "emaillinks", force: :cascade do |t|
+  create_table "email_links", force: :cascade do |t|
     t.datetime "accept_or_rejected_at"
     t.boolean  "accepted"
     t.integer  "cnt_title_words"

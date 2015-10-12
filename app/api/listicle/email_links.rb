@@ -3,7 +3,7 @@ module Email_Links
         resource :email_links do
             desc "Get all email links"
             get :all do
-                Emaillink.all
+                EmailLink.all
             end
         end
     end
