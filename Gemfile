@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.2.1"
+ruby "2.2.2"
 # load before most everything else
 gem "dotenv-rails", require: 'dotenv/rails-now', groups: [:development, :test]
 

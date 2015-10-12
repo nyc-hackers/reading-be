@@ -34,7 +34,7 @@ describe "email_listicle_api", type: :api do
         resp = jsonify_response(last_response.body)
         expect(resp).to be_kind_of Array
         expect(resp.first.keys).to include("email_subject")
->>>>>>> helping/grape
+
       end
     end
   end
