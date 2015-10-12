@@ -29,6 +29,8 @@ RSpec.configure do |config|
   config.before(:suite) do
     FactoryGirl.lint
   end
+  
+  config.backtrace_exclusion_patterns
 
   config.include FactoryGirl::Syntax::Methods
 
