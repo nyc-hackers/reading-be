@@ -14,8 +14,7 @@ RSpec.describe EmailLink, type: :model do
     it "returns undecided emails" do
 
         email1 = build(:email_link)
-
-        email2 = build(:email_link, accept_or_rejected: Time.now, accepted: true)
+        email2 = build(:email_link, accept_or_rejected_at: Time.now, accepted: true)
 
         result = EmailLink.undecided
 

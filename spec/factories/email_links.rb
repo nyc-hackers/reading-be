@@ -5,7 +5,7 @@ FactoryGirl.define do
      from_name "K Green"
      url "www.nytimes.com"
      title "Cray invents new computer"
-     accept_or_rejected nil
+     accept_or_rejected_at nil
      accepted nil
      end
 
