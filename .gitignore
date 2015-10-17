@@ -13,3 +13,4 @@
 /tmp
 .env
 .ruby-version
+.profile
