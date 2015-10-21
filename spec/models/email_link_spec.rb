@@ -14,13 +14,31 @@ RSpec.describe EmailLink, type: :model do
     it "returns undecided emails" do
 
         email1 = build(:email_link)
-        email2 = build(:email_link, accept_or_rejected_at: Time.now, accepted: true)
+        email2 = build(:email_link, accept_or_rejected_at: DateTime.now, accepted: true)
+
+        email1.save
+        email2.save
 
         result = EmailLink.undecided
 
         expect(result).to include(email1)
         expect(result).not_to include(email2)
     end
+
+    it "returns unread emails" do
+
+      email1 = build(:email_link)
+      email2 = build(:email_link, accept_or_rejected_at: DateTime.now, accepted: true)
+      email3 = build(:email_link, accept_or_rejected_at: DateTime.now, accepted: false)
+
+      result = EmailLink.unread
+
+      expect(result).to include(email2)
+      expect(result).not_to include(email1)
+      expect(result).not_to include(email3)
+
+    end
+
 end
 
 
