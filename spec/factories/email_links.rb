@@ -7,6 +7,7 @@ FactoryGirl.define do
      title "Cray invents new computer"
      accept_or_rejected_at nil
      accepted nil
+     read nil
      end
 
 

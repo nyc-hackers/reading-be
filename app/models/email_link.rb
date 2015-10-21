@@ -5,4 +5,9 @@ class EmailLink < ActiveRecord::Base
       EmailLink.where(accept_or_rejected_at: nil)
 
     end
+
+    def self.unread
+      EmailLink.where(read: false)
+
+    end
 end
