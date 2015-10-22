@@ -40,6 +40,21 @@ RSpec.describe EmailLink, type: :model do
 
     end
 
+    it "adds email link to reading list" do
+
+      email1 = build(:email_link)
+
+      email1.save
+
+      result = EmailLink.add_to_reading_list(email1.id)
+      email1.reload
+
+      expect(result).to be_truthy
+      expect(email1).to have_attributes(accepted: true, read: false)
+      expect(email1.accept_or_rejected_at).not_to be_nil
+    end
+
+
 end
 
 
