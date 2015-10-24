@@ -1,9 +1,9 @@
 module Listicle
     class  EmailLinkResource < Grape::API
         resource :email_link do
-            desc "Get all email links"
+            desc "List un-seen links"
             get :all do
-                EmailLink.all
+                EmailLink.undecided
             end
         end
     end
