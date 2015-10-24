@@ -12,8 +12,10 @@ class EmailLink < ActiveRecord::Base
     end
 
     def self.add_to_reading_list(id)
-
       EmailLink.find(id).update(accepted: true, accept_or_rejected_at: DateTime.now, read: false)
+    end
 
+    def self.reject_from_reading_list(id)
+      EmailLink.find(id).update(accepted: false, accept_or_rejected_at: DateTime.now)
     end
 end

@@ -54,6 +54,17 @@ RSpec.describe EmailLink, type: :model do
       expect(email1.accept_or_rejected_at).not_to be_nil
     end
 
+    it "rejects email link from reading list" do
+      email1 = build(:email_link)
+      email1.save
+
+      result = EmailLink.reject_from_reading_list(email1.id)
+      email1.reload
+
+      expect(email1).to have_attributes(accepted: false)
+      expect(email1.accept_or_rejected_at).not_to be_nil
+    end
+
 
 end
 
