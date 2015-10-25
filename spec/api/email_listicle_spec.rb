@@ -59,7 +59,7 @@ describe "email_listicle_api", type: :api do
         email1 = build(:email_link, accepted: true, accept_or_rejected_at: DateTime.yesterday, read: false)
         email1.save
 
-        put v1_prefix + "/email_link/read/#{email1.id}"
+        put v1_prefix + "/email_link/read/", params: {id: 1}
         email1.reload
 
         expect(email1.read).to be true
