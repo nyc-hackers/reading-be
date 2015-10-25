@@ -12,18 +12,15 @@ module Listicle
       end
 
       desc "marks email as read"
-      post :read do
+      put :read do
         email = EmailLink.find(params[:id])
         email.read = true
+
         email.save
 
         {status: 200}
       end
 
-      desc "test post"
-      post :test do
-        "hello"
-      end
 
 
     end

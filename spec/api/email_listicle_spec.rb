@@ -53,17 +53,17 @@ describe "email_listicle_api", type: :api do
     end
   end
 
-  describe "POST /read/:id" do
+  describe "PUT /read/:id" do
     context "when a user has marked a link as read" do
       it "changes the read attribute to true" do
         email1 = build(:email_link, accepted: true, accept_or_rejected_at: DateTime.yesterday, read: false)
         email1.save
 
-        put v1_prefix + "/email_link/read/", params: {id: 1}
+        put v1_prefix + "/email_link/read/", {id: email1.id}
         email1.reload
 
         expect(email1.read).to be true
-        expect(last_response.status).to eq('200')
+        expect(last_response.status).to eq(200)
       end
     end
   end
