@@ -68,4 +68,19 @@ describe "email_listicle_api", type: :api do
     end
   end
 
+  describe "PUT /add_to_reading_list/:id" do
+    context "when a user has a link to reading_list" do
+      it "changes accepted attribute to true" do
+        email1 = build(:email_link)
+        email1.save
+
+        put v1_prefix + "/email_link/add_to_reading_list/", {id: email1.id}
+        email1.reload
+
+        expect(email1.accepted).to be true
+        expect(last_response.status).to eq(200)
+      end
+    end
+  end
+
 end
