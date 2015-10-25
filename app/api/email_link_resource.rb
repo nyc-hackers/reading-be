@@ -29,6 +29,13 @@ module Listicle
         {status: 200}
       end
 
+      desc "reject email link"
+      put :reject_from_reading_list do
+        email = EmailLink.find(params[:id])
+        email.accepted = false
+        email.save
+        {status: 200}
+      end
 
     end
   end

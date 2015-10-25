@@ -83,4 +83,20 @@ describe "email_listicle_api", type: :api do
     end
   end
 
+  describe "PUT /reject_from_reading_list/:id" do
+    context "when a user has rejected a link" do
+      it "changes accepted attribute to false" do
+        email1 = build(:email_link)
+        email1.save
+
+        put v1_prefix + "/email_link/reject_from_reading_list/", {id: email1.id}
+        email1.reload
+
+        expect(email1.accepted).to be false
+        expect(last_response.status).to eq(200)
+      end
+    end
+  end
+
+
 end
