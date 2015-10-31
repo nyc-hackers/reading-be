@@ -56,7 +56,7 @@ describe "email_listicle_api", type: :api do
   describe "PUT /read/:id" do
     context "when a user has marked a link as read" do
       it "changes the read attribute to true" do
-        email1 = build(:email_link, accepted: true, accept_or_rejected_at: DateTime.yesterday, read: false)
+        email1 = build(:accepted_and_unread_email_link)
         email1.save
 
         put v1_prefix + "/email_link/read/", {id: email1.id}
