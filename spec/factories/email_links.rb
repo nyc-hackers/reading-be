@@ -1,14 +1,26 @@
 FactoryGirl.define do
   factory :email_link do
-     email_subject "cray computer"
-     from_email "kegreen22@gmail.com"
-     from_name "K Green"
-     url "www.nytimes.com"
-     title "Cray invents new computer"
-     accept_or_rejected_at nil
-     accepted nil
-     read nil
-     end
+   email_subject "cray computer"
+   from_email "kegreen22@gmail.com"
+   from_name "K Green"
+   url "www.nytimes.com"
+   title "Cray invents new computer"
+   accept_or_rejected_at nil
+   accepted nil
+   read nil
+   trait :unaccepted do
+     accepted false
+     accept_or_rejected_at DateTime.now
+   end
+   trait :accepted do
+     accepted true
+     accept_or_rejected_at DateTime.now
+   end
 
+   trait :unread do
+      read false
+   end
 
+   factory :accepted_and_unread_email_link, traits: [:accepted, :unread]
+  end
 end

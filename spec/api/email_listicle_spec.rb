@@ -41,7 +41,7 @@ describe "email_listicle_api", type: :api do
   describe "GET /unread" do
     context "when there are unread email_links" do
       it "returns array of accepted and unread email links" do
-        email1 = build(:email_link, accepted:true, accept_or_rejected_at: DateTime.now, read: false)
+        email1 = build(:accepted_and_unread_email_link)
         allow(EmailLink).to receive(:unread).and_return([email1])
 
         get v1_prefix + "/email_link/unread", format: :json
@@ -62,7 +62,7 @@ describe "email_listicle_api", type: :api do
         put v1_prefix + "/email_link/read/", {id: email1.id}
         email1.reload
 
-        expect(email1.read).to be true
+        expect(email1.read).to be_truthy
         expect(last_response.status).to eq(200)
       end
     end
@@ -77,7 +77,7 @@ describe "email_listicle_api", type: :api do
         put v1_prefix + "/email_link/add_to_reading_list/", {id: email1.id}
         email1.reload
 
-        expect(email1.accepted).to be true
+        expect(email1.accepted).to be_truthy
         expect(last_response.status).to eq(200)
       end
     end
@@ -92,7 +92,7 @@ describe "email_listicle_api", type: :api do
         put v1_prefix + "/email_link/reject_from_reading_list/", {id: email1.id}
         email1.reload
 
-        expect(email1.accepted).to be false
+        expect(email1.accepted).to be_falsey
         expect(last_response.status).to eq(200)
       end
     end
