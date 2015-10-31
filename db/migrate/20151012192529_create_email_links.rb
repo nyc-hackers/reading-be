@@ -1,5 +1,6 @@
 class CreateEmailLinks < ActiveRecord::Migration
   def change
+    
     create_table :email_links do |t|
       t.datetime :accept_or_rejected_at
       t.boolean :accepted
@@ -11,7 +12,7 @@ class CreateEmailLinks < ActiveRecord::Migration
       t.string :title, null: false
       t.integer :label_id
       t.integer :user_id
-      
+      t.boolean :read
       t.timestamps null: false
     end
   end
