@@ -21,6 +21,11 @@ FactoryGirl.define do
       read false
    end
 
+   trait :invalid_url do
+     url ""
+   end
+
    factory :accepted_and_unread_email_link, traits: [:accepted, :unread]
+   factory :invalid_email_link, traits: [:invalid_url]
   end
 end
