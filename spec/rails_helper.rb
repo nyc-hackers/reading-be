@@ -27,7 +27,11 @@ require 'rspec/rails'
 ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   config.before(:suite) do
-    FactoryGirl.lint
+    factories_to_lint = FactoryGirl.factories.reject do |factory|
+      factory.name =~ /^invalid_/
+    end
+
+    FactoryGirl.lint factories_to_lint
   end
 
   config.before(:suite) do
