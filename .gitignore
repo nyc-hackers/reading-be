@@ -11,6 +11,16 @@
 /log/*
 !/log/.keep
 /tmp
+
 .ruby-version
 application.yml
 .idea
+
+.env
+.ruby-version
+.profile
+.idea
+
+
+
+
