@@ -6,7 +6,7 @@ RSpec.describe EmailLink, type: :model do
     end
 
     it "fails validations with invalid attributes" do
-        expect(build(:email_link, url:"").valid?).to be_falsy
+        expect(build(:invalid_email_link).valid?).to be_falsy
     end
 
     it "returns undecided emails" do
