@@ -6,6 +6,9 @@ gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+# Devise
+gem 'devise'
+
 # Grape
 gem 'grape'
 
