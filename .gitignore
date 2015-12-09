@@ -19,7 +19,6 @@
 
 .ruby-version
 application.yml
-
 .env
 .ruby-version
 .profile

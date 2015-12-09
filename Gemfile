@@ -10,6 +10,8 @@ gem 'grape'
 gem 'hashie-forbidden_attributes' # helpful for using grape
 gem 'puma'
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-github'
 
 group :development, :test do
   gem 'byebug'
