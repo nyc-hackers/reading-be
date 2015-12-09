@@ -15,14 +15,12 @@
 
 # Ignore application configuration
 /config/application.yml
+.idea
 
 .ruby-version
 application.yml
-.idea
 
 .env
 .ruby-version
 .profile
-
-.idea
 notes.md

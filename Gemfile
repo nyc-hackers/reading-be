@@ -9,6 +9,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'grape'
 gem 'hashie-forbidden_attributes' # helpful for using grape
 gem 'puma'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'
