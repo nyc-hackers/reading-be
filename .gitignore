@@ -12,6 +12,16 @@
 !/log/.keep
 /tmp
 
+
 # Ignore application configuration
 /config/application.yml
+.idea
+
+.ruby-version
+application.yml
+.idea
+
+.env
+.ruby-version
+.profile
 .idea
