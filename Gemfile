@@ -12,6 +12,7 @@ gem 'puma'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug'
